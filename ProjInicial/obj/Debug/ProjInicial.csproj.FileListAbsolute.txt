@@ -1,0 +1,10 @@
+c:\users\josy\documents\visual studio 2013\Projects\ProjInicial\ProjInicial\bin\Debug\ProjInicial.exe.config
+c:\users\josy\documents\visual studio 2013\Projects\ProjInicial\ProjInicial\bin\Debug\ProjInicial.exe
+c:\users\josy\documents\visual studio 2013\Projects\ProjInicial\ProjInicial\bin\Debug\ProjInicial.pdb
+c:\users\josy\documents\visual studio 2013\Projects\ProjInicial\ProjInicial\obj\Debug\ProjInicial.csprojResolveAssemblyReference.cache
+c:\users\josy\documents\visual studio 2013\Projects\ProjInicial\ProjInicial\obj\Debug\ProjInicial.Form1.resources
+c:\users\josy\documents\visual studio 2013\Projects\ProjInicial\ProjInicial\obj\Debug\ProjInicial.Properties.Resources.resources
+c:\users\josy\documents\visual studio 2013\Projects\ProjInicial\ProjInicial\obj\Debug\ProjInicial.csproj.GenerateResource.Cache
+c:\users\josy\documents\visual studio 2013\Projects\ProjInicial\ProjInicial\obj\Debug\ProjInicial.exe
+c:\users\josy\documents\visual studio 2013\Projects\ProjInicial\ProjInicial\obj\Debug\ProjInicial.pdb
+C:\Users\Josy\Documents\Visual Studio 2013\Projects\ProjInicial\ProjInicial\obj\Debug\ProjInicial.Form2.resources

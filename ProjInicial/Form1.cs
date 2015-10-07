@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Data.SqlClient;
+using MySql.Data.MySqlClient;
 
 namespace ProjInicial
 {
@@ -15,8 +15,10 @@ namespace ProjInicial
     {
         private String login;
         private String senha;
-        SqlConnection sqlConn = null;
-        private String sqlConexion = "server=localhost;user id=root;database=baseteste";
+        MySqlConnection mConn = null;
+        MySqlDataAdapter mAdapter;
+     
+       
         private String strSql = string.Empty;
 
         public Form1()
@@ -27,21 +29,39 @@ namespace ProjInicial
 
         public void logar()
         {
-            sqlConn = new SqlConnection(sqlConexion);
+            DataSet mDataSet = new DataSet();
             login = textBox1.Text;
             senha = textBox2.Text;
-
-           
+            mConn = new MySqlConnection("SERVER=localhost;DATABASE=baseteste;UID=root;PASSWORD=Josyane");
+            
             try
-            {
-
+                  {
+                    //abre a conexao
+                  if (mConn != null)mConn.Open();
+                    
+                    strSql = "SELECT idusuarios FROM usuarios WHERE usuarios =  @usuarios and usuarioSenha = @usuarioSenha";
+               
+                    MySqlCommand mySqlCommand = new MySqlCommand(strSql, mConn);
+                    mySqlCommand.Parameters.AddWithValue("@usuarios", MySqlDbType.VarChar).Value = login;
+                    mySqlCommand.Parameters.AddWithValue("@usuarioSenha", MySqlDbType.VarChar).Value = senha;
+                    if (mConn != null)
+                    {
+                        if (mConn.State == ConnectionState.Open)
+                        {
+                            mAdapter = new MySqlDataAdapter(mySqlCommand);
+                        }
+                    }
+                    
+               
+    
             }
-            catch (SqlException erroSql)
+            catch (MySqlException erroSql)
             {
-
+                MessageBox.Show(erroSql + "no banco");
             }
-        }
 
+
+         }
 
 
         private void button1_Click(object sender, EventArgs e)
@@ -122,8 +142,7 @@ namespace ProjInicial
 
         private void button1_Click_1(object sender, EventArgs e)
         {
-            
-            
+            logar();            
             
             if ((login == "Josy") && (senha == "Josy"))
                 MessageBox.Show ("***** BEM VINDO," + login +", ****** ");

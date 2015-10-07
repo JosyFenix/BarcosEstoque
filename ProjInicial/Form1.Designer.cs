@@ -141,6 +141,7 @@
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.label1);
             this.ForeColor = System.Drawing.Color.Blue;
+            this.MaximizeBox = false;
             this.Name = "Form1";
             this.Text = "Bem Vindo ao Sistema Griffo";
             this.Load += new System.EventHandler(this.Form1_Load);

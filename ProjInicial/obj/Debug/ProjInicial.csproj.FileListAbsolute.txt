@@ -9,3 +9,4 @@ c:\users\josy\documents\visual studio 2013\Projects\ProjInicial\ProjInicial\obj\
 c:\users\josy\documents\visual studio 2013\Projects\ProjInicial\ProjInicial\obj\Debug\ProjInicial.pdb
 C:\Users\Josy\Documents\Visual Studio 2013\Projects\ProjInicial\ProjInicial\obj\Debug\ProjInicial.Form2.resources
 C:\Users\Josy\Documents\Visual Studio 2013\Projects\ProjInicial\ProjInicial\obj\Debug\ProjInicial.Resources.resources
+C:\Users\Josy\Documents\Visual Studio 2013\Projects\ProjInicial\ProjInicial\obj\Debug\ProjInicial.Form3.resources

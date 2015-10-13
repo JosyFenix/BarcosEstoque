@@ -10,3 +10,6 @@ c:\users\josy\documents\visual studio 2013\Projects\ProjInicial\ProjInicial\obj\
 C:\Users\Josy\Documents\Visual Studio 2013\Projects\ProjInicial\ProjInicial\obj\Debug\ProjInicial.Form2.resources
 C:\Users\Josy\Documents\Visual Studio 2013\Projects\ProjInicial\ProjInicial\obj\Debug\ProjInicial.Resources.resources
 C:\Users\Josy\Documents\Visual Studio 2013\Projects\ProjInicial\ProjInicial\obj\Debug\ProjInicial.Form3.resources
+C:\Users\Josy\Documents\Visual Studio 2013\Projects\ProjInicial\github1\ProjInicial\bin\Debug\ProjInicial.exe.config
+C:\Users\Josy\Documents\Visual Studio 2013\Projects\ProjInicial\github1\ProjInicial\obj\Debug\ProjInicial.exe
+C:\Users\Josy\Documents\Visual Studio 2013\Projects\ProjInicial\github1\ProjInicial\obj\Debug\ProjInicial.pdb

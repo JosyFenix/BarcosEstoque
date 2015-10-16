@@ -115,5 +115,13 @@ namespace ProjInicial
             formula2.Show();
             this.Hide();
         }
+
+        private void button9_Click(object sender, EventArgs e)
+        {
+            Lista_de_Produtos lprods = new Lista_de_Produtos();
+            lprods.Show();
+            this.Hide();
+
+        }
     }
 }

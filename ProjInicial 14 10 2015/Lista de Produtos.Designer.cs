@@ -52,12 +52,19 @@
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
             this.CampoPesquisa = new System.Windows.Forms.TextBox();
-            this.basetesteDataSet = new ProjInicial.basetesteDataSet();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.produtosBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.basetesteDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.basetesteDataSet = new ProjInicial.basetesteDataSet();
+            this.produtosTableAdapter = new ProjInicial.basetesteDataSetTableAdapters.produtosTableAdapter();
+            this.idprodutosDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.produtosDescrDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.menuStrip1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.basetesteDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.produtosBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.basetesteDataSetBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.basetesteDataSet)).BeginInit();
             this.SuspendLayout();
             // 
             // pictureBox2
@@ -204,6 +211,7 @@
             this.button2.TabIndex = 31;
             this.button2.Text = "Voltar";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // label2
             // 
@@ -226,8 +234,7 @@
             this.comboBox1.FormattingEnabled = true;
             this.comboBox1.Items.AddRange(new object[] {
             "Número",
-            "Nome",
-            "Localização"});
+            "Nome"});
             this.comboBox1.Location = new System.Drawing.Point(229, 127);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(193, 33);
@@ -255,16 +262,59 @@
             this.CampoPesquisa.Name = "CampoPesquisa";
             this.CampoPesquisa.Size = new System.Drawing.Size(140, 30);
             this.CampoPesquisa.TabIndex = 37;
+            this.CampoPesquisa.TextChanged += new System.EventHandler(this.CampoPesquisa_TextChanged);
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.AllowUserToAddRows = false;
+            this.dataGridView1.AllowUserToDeleteRows = false;
+            this.dataGridView1.AllowUserToOrderColumns = true;
+            this.dataGridView1.AutoGenerateColumns = false;
+            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.InactiveCaption;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.idprodutosDataGridViewTextBoxColumn,
+            this.produtosDescrDataGridViewTextBoxColumn});
+            this.dataGridView1.DataSource = this.produtosBindingSource;
+            this.dataGridView1.Location = new System.Drawing.Point(193, 216);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.ReadOnly = true;
+            this.dataGridView1.Size = new System.Drawing.Size(570, 208);
+            this.dataGridView1.TabIndex = 38;
+            // 
+            // produtosBindingSource
+            // 
+            this.produtosBindingSource.DataMember = "produtos";
+            this.produtosBindingSource.DataSource = this.basetesteDataSetBindingSource;
+            // 
+            // basetesteDataSetBindingSource
+            // 
+            this.basetesteDataSetBindingSource.DataSource = this.basetesteDataSet;
+            this.basetesteDataSetBindingSource.Position = 0;
             // 
             // basetesteDataSet
             // 
             this.basetesteDataSet.DataSetName = "basetesteDataSet";
             this.basetesteDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
-            // basetesteDataSetBindingSource
+            // produtosTableAdapter
             // 
-            this.basetesteDataSetBindingSource.DataSource = this.basetesteDataSet;
-            this.basetesteDataSetBindingSource.Position = 0;
+            this.produtosTableAdapter.ClearBeforeFill = true;
+            // 
+            // idprodutosDataGridViewTextBoxColumn
+            // 
+            this.idprodutosDataGridViewTextBoxColumn.DataPropertyName = "idprodutos";
+            this.idprodutosDataGridViewTextBoxColumn.HeaderText = "Número";
+            this.idprodutosDataGridViewTextBoxColumn.Name = "idprodutosDataGridViewTextBoxColumn";
+            this.idprodutosDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // produtosDescrDataGridViewTextBoxColumn
+            // 
+            this.produtosDescrDataGridViewTextBoxColumn.DataPropertyName = "produtosDescr";
+            this.produtosDescrDataGridViewTextBoxColumn.HeaderText = "Nome";
+            this.produtosDescrDataGridViewTextBoxColumn.Name = "produtosDescrDataGridViewTextBoxColumn";
+            this.produtosDescrDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // Lista_de_Produtos
             // 
@@ -273,6 +323,7 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(988, 565);
+            this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.CampoPesquisa);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.comboBox1);
@@ -287,8 +338,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.basetesteDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.produtosBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.basetesteDataSetBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.basetesteDataSet)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -320,5 +373,10 @@
         private System.Windows.Forms.TextBox CampoPesquisa;
         private System.Windows.Forms.BindingSource basetesteDataSetBindingSource;
         private basetesteDataSet basetesteDataSet;
+        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.BindingSource produtosBindingSource;
+        private basetesteDataSetTableAdapters.produtosTableAdapter produtosTableAdapter;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idprodutosDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn produtosDescrDataGridViewTextBoxColumn;
     }
 }

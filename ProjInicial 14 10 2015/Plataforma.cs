@@ -4,7 +4,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using MySql.Data.MySqlClient;
-
+using System.Object;
+using System.Collections.Hashtable;
+using System.Collections.SortedList;
+using System.Collections.ArrayList;
+using System.Collections.;
+    
 namespace ProjInicial
 {
     class Plataforma
@@ -12,6 +17,10 @@ namespace ProjInicial
         String IdPlataforma { get; set;}
         String localizacao { get; set;}
         Item[] estoquePlat { get; set;}
+        private List<Item> associacoes = new List<Item>();
+           
+
+   
 
         private MySqlConnection mConnB = null;
         private MySqlDataAdapter mAdapterB;

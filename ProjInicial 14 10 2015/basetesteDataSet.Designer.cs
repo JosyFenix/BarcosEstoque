@@ -3066,7 +3066,7 @@ namespace ProjInicial.basetesteDataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
-        public virtual int descrProdut(basetesteDataSet.produtosDataTable dataTable, string Param1) {
+        public virtual int ProdQuery(basetesteDataSet.produtosDataTable dataTable, string Param1) {
             this.Adapter.SelectCommand = this.CommandCollection[1];
             if ((Param1 == null)) {
                 throw new global::System.ArgumentNullException("Param1");

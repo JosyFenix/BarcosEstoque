@@ -119,7 +119,7 @@ WHERE        (descrBarcos LIKE @Param1)</CommandText>
               <Mapping SourceColumn="PlataformaLocal" DataSetColumn="PlataformaLocal" />
             </Mappings>
             <Sources>
-              <DbSource ConnectionRef="basetesteConnectionString (Settings)" DbObjectName="baseteste.plataformas" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="FillBy" GenerateMethods="Fill" GenerateShortCommands="true" GeneratorSourceName="FillBy" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy1" UserSourceName="FillBy">
+              <DbSource ConnectionRef="basetesteConnectionString (Settings)" DbObjectName="baseteste.plataformas" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="FillBy" GenerateMethods="Fill" GenerateShortCommands="true" GeneratorSourceName="FillBy" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="FillBy">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
                     <CommandText>SELECT        idPlataformas, PlataformaDescr, PlataformaLocal
@@ -131,7 +131,7 @@ WHERE        (PlataformaDescr LIKE @Param1)</CommandText>
                   </DbCommand>
                 </SelectCommand>
               </DbSource>
-              <DbSource ConnectionRef="basetesteConnectionString (Settings)" DbObjectName="baseteste.plataformas" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="PlataformasDescrQuery" GenerateMethods="Fill" GenerateShortCommands="true" GeneratorSourceName="PlataformasDescrQuery" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="PlataformasDescrQuery">
+              <DbSource ConnectionRef="basetesteConnectionString (Settings)" DbObjectName="baseteste.plataformas" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="PlataformasDescrQuery" GenerateMethods="Fill" GenerateShortCommands="true" GeneratorSourceName="PlataformasDescrQuery" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy1" UserSourceName="PlataformasDescrQuery">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
                     <CommandText>SELECT        idPlataformas, PlataformaDescr, PlataformaLocal
@@ -190,7 +190,7 @@ WHERE        (PlataformaDescr LIKE @Param1)</CommandText>
               <Mapping SourceColumn="produtosDescr" DataSetColumn="produtosDescr" />
             </Mappings>
             <Sources>
-              <DbSource ConnectionRef="basetesteConnectionString (Settings)" DbObjectName="baseteste.produtos" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="descrProdut" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetDataBy" GeneratorSourceName="descrProdut" GetMethodModifier="Public" GetMethodName="GetDataBy" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="descrProdut">
+              <DbSource ConnectionRef="basetesteConnectionString (Settings)" DbObjectName="baseteste.produtos" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="ProdQuery" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetDataBy" GeneratorSourceName="ProdQuery" GetMethodModifier="Public" GetMethodName="GetDataBy" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="ProdQuery">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>SELECT        idprodutos, produtosDescr
@@ -263,7 +263,7 @@ WHERE        (produtosDescr LIKE @Param1)</CommandText>
   <xs:element name="basetesteDataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="basetesteDataSet" msprop:Generator_UserDSName="basetesteDataSet">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
-        <xs:element name="barcos" msprop:Generator_TableClassName="barcosDataTable" msprop:Generator_TableVarName="tablebarcos" msprop:Generator_TablePropName="barcos" msprop:Generator_RowDeletingName="barcosRowDeleting" msprop:Generator_RowChangingName="barcosRowChanging" msprop:Generator_RowEvHandlerName="barcosRowChangeEventHandler" msprop:Generator_RowDeletedName="barcosRowDeleted" msprop:Generator_UserTableName="barcos" msprop:Generator_RowChangedName="barcosRowChanged" msprop:Generator_RowEvArgName="barcosRowChangeEvent" msprop:Generator_RowClassName="barcosRow">
+        <xs:element name="barcos" msprop:Generator_TableClassName="barcosDataTable" msprop:Generator_TableVarName="tablebarcos" msprop:Generator_RowChangedName="barcosRowChanged" msprop:Generator_TablePropName="barcos" msprop:Generator_RowDeletingName="barcosRowDeleting" msprop:Generator_RowChangingName="barcosRowChanging" msprop:Generator_RowEvHandlerName="barcosRowChangeEventHandler" msprop:Generator_RowDeletedName="barcosRowDeleted" msprop:Generator_RowClassName="barcosRow" msprop:Generator_UserTableName="barcos" msprop:Generator_RowEvArgName="barcosRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="idBarcos" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnidBarcos" msprop:Generator_ColumnPropNameInRow="idBarcos" msprop:Generator_ColumnPropNameInTable="idBarcosColumn" msprop:Generator_UserColumnName="idBarcos" type="xs:int" />
@@ -284,7 +284,7 @@ WHERE        (produtosDescr LIKE @Param1)</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="plataformas" msprop:Generator_TableClassName="plataformasDataTable" msprop:Generator_TableVarName="tableplataformas" msprop:Generator_TablePropName="plataformas" msprop:Generator_RowDeletingName="plataformasRowDeleting" msprop:Generator_RowChangingName="plataformasRowChanging" msprop:Generator_RowEvHandlerName="plataformasRowChangeEventHandler" msprop:Generator_RowDeletedName="plataformasRowDeleted" msprop:Generator_UserTableName="plataformas" msprop:Generator_RowChangedName="plataformasRowChanged" msprop:Generator_RowEvArgName="plataformasRowChangeEvent" msprop:Generator_RowClassName="plataformasRow">
+        <xs:element name="plataformas" msprop:Generator_TableClassName="plataformasDataTable" msprop:Generator_TableVarName="tableplataformas" msprop:Generator_RowChangedName="plataformasRowChanged" msprop:Generator_TablePropName="plataformas" msprop:Generator_RowDeletingName="plataformasRowDeleting" msprop:Generator_RowChangingName="plataformasRowChanging" msprop:Generator_RowEvHandlerName="plataformasRowChangeEventHandler" msprop:Generator_RowDeletedName="plataformasRowDeleted" msprop:Generator_RowClassName="plataformasRow" msprop:Generator_UserTableName="plataformas" msprop:Generator_RowEvArgName="plataformasRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="idPlataformas" msprop:Generator_ColumnVarNameInTable="columnidPlataformas" msprop:Generator_ColumnPropNameInRow="idPlataformas" msprop:Generator_ColumnPropNameInTable="idPlataformasColumn" msprop:Generator_UserColumnName="idPlataformas">
@@ -311,7 +311,7 @@ WHERE        (produtosDescr LIKE @Param1)</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="produtos" msprop:Generator_TableClassName="produtosDataTable" msprop:Generator_TableVarName="tableprodutos" msprop:Generator_TablePropName="produtos" msprop:Generator_RowDeletingName="produtosRowDeleting" msprop:Generator_RowChangingName="produtosRowChanging" msprop:Generator_RowEvHandlerName="produtosRowChangeEventHandler" msprop:Generator_RowDeletedName="produtosRowDeleted" msprop:Generator_UserTableName="produtos" msprop:Generator_RowChangedName="produtosRowChanged" msprop:Generator_RowEvArgName="produtosRowChangeEvent" msprop:Generator_RowClassName="produtosRow">
+        <xs:element name="produtos" msprop:Generator_TableClassName="produtosDataTable" msprop:Generator_TableVarName="tableprodutos" msprop:Generator_RowChangedName="produtosRowChanged" msprop:Generator_TablePropName="produtos" msprop:Generator_RowDeletingName="produtosRowDeleting" msprop:Generator_RowChangingName="produtosRowChanging" msprop:Generator_RowEvHandlerName="produtosRowChangeEventHandler" msprop:Generator_RowDeletedName="produtosRowDeleted" msprop:Generator_RowClassName="produtosRow" msprop:Generator_UserTableName="produtos" msprop:Generator_RowEvArgName="produtosRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="idprodutos" msprop:Generator_ColumnVarNameInTable="columnidprodutos" msprop:Generator_ColumnPropNameInRow="idprodutos" msprop:Generator_ColumnPropNameInTable="idprodutosColumn" msprop:Generator_UserColumnName="idprodutos">
@@ -331,7 +331,7 @@ WHERE        (produtosDescr LIKE @Param1)</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="usuarios" msprop:Generator_TableClassName="usuariosDataTable" msprop:Generator_TableVarName="tableusuarios" msprop:Generator_TablePropName="usuarios" msprop:Generator_RowDeletingName="usuariosRowDeleting" msprop:Generator_RowChangingName="usuariosRowChanging" msprop:Generator_RowEvHandlerName="usuariosRowChangeEventHandler" msprop:Generator_RowDeletedName="usuariosRowDeleted" msprop:Generator_UserTableName="usuarios" msprop:Generator_RowChangedName="usuariosRowChanged" msprop:Generator_RowEvArgName="usuariosRowChangeEvent" msprop:Generator_RowClassName="usuariosRow">
+        <xs:element name="usuarios" msprop:Generator_TableClassName="usuariosDataTable" msprop:Generator_TableVarName="tableusuarios" msprop:Generator_RowChangedName="usuariosRowChanged" msprop:Generator_TablePropName="usuarios" msprop:Generator_RowDeletingName="usuariosRowDeleting" msprop:Generator_RowChangingName="usuariosRowChanging" msprop:Generator_RowEvHandlerName="usuariosRowChangeEventHandler" msprop:Generator_RowDeletedName="usuariosRowDeleted" msprop:Generator_RowClassName="usuariosRow" msprop:Generator_UserTableName="usuarios" msprop:Generator_RowEvArgName="usuariosRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="idusuarios" msprop:Generator_ColumnVarNameInTable="columnidusuarios" msprop:Generator_ColumnPropNameInRow="idusuarios" msprop:Generator_ColumnPropNameInTable="idusuariosColumn" msprop:Generator_UserColumnName="idusuarios">

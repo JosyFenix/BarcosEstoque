@@ -12,7 +12,7 @@ namespace ProjInicial
         public String No_ { get; set; }
         public String Descricao { get; set; }
         public int Quantidade { get; set; }
-
+                
         private MySqlConnection mConnB = null;
         private MySqlDataAdapter mAdapterB;
         private MySqlDataReader reader;

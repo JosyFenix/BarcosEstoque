@@ -217,6 +217,7 @@
             this.button9.TabIndex = 33;
             this.button9.Text = "Localizar";
             this.button9.UseVisualStyleBackColor = true;
+            this.button9.Click += new System.EventHandler(this.button9_Click);
             // 
             // button1
             // 

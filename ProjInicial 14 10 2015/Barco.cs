@@ -116,5 +116,42 @@ namespace ProjInicial
 
         }
 
+        public bool buscaItem(String barcosDescr)
+        {
+            try
+            {
+                mConnB = new MySqlConnection("Persist Security Info=False;SERVER=localhost;DATABASE=baseteste;UID=root;PASSWORD=Josyane;");
+                mConnB.Open();
+
+                MySqlCommand cmd = new MySqlCommand();
+                cmd.CommandText = "Select * from barcos where descrBarcos = @descrBarcos;";
+                cmd.Parameters.AddWithValue("@descrBarcos", barcosDescr);
+                //cmd.Parameters.AddWithValue("@quantidade", quantidade);
+
+                if (mConnB != null) cmd.Connection = mConnB;
+                MySqlDataReader leBarcos = cmd.ExecuteReader();
+
+
+                if (leBarcos.Read())
+                {
+                    mConnB.Close();
+                    return true;
+                }
+                else
+                {
+                    mConnB.Close();
+                    return false;
+                }
+            }
+            catch (MySqlException e)
+            {
+                throw;
+            }
+
+
+
+            //se ele achar, devolve
+        }
+
     }
 }

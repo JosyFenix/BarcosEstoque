@@ -53,12 +53,12 @@
             this.label3 = new System.Windows.Forms.Label();
             this.CampoPesquisa = new System.Windows.Forms.TextBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.idprodutosDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.produtosDescrDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.produtosBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.basetesteDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.basetesteDataSet = new ProjInicial.basetesteDataSet();
             this.produtosTableAdapter = new ProjInicial.basetesteDataSetTableAdapters.produtosTableAdapter();
-            this.idprodutosDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.produtosDescrDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -283,6 +283,20 @@
             this.dataGridView1.Size = new System.Drawing.Size(570, 208);
             this.dataGridView1.TabIndex = 38;
             // 
+            // idprodutosDataGridViewTextBoxColumn
+            // 
+            this.idprodutosDataGridViewTextBoxColumn.DataPropertyName = "idprodutos";
+            this.idprodutosDataGridViewTextBoxColumn.HeaderText = "Número";
+            this.idprodutosDataGridViewTextBoxColumn.Name = "idprodutosDataGridViewTextBoxColumn";
+            this.idprodutosDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // produtosDescrDataGridViewTextBoxColumn
+            // 
+            this.produtosDescrDataGridViewTextBoxColumn.DataPropertyName = "produtosDescr";
+            this.produtosDescrDataGridViewTextBoxColumn.HeaderText = "Nome";
+            this.produtosDescrDataGridViewTextBoxColumn.Name = "produtosDescrDataGridViewTextBoxColumn";
+            this.produtosDescrDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
             // produtosBindingSource
             // 
             this.produtosBindingSource.DataMember = "produtos";
@@ -302,20 +316,6 @@
             // 
             this.produtosTableAdapter.ClearBeforeFill = true;
             // 
-            // idprodutosDataGridViewTextBoxColumn
-            // 
-            this.idprodutosDataGridViewTextBoxColumn.DataPropertyName = "idprodutos";
-            this.idprodutosDataGridViewTextBoxColumn.HeaderText = "Número";
-            this.idprodutosDataGridViewTextBoxColumn.Name = "idprodutosDataGridViewTextBoxColumn";
-            this.idprodutosDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // produtosDescrDataGridViewTextBoxColumn
-            // 
-            this.produtosDescrDataGridViewTextBoxColumn.DataPropertyName = "produtosDescr";
-            this.produtosDescrDataGridViewTextBoxColumn.HeaderText = "Nome";
-            this.produtosDescrDataGridViewTextBoxColumn.Name = "produtosDescrDataGridViewTextBoxColumn";
-            this.produtosDescrDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
             // Lista_de_Produtos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -333,6 +333,7 @@
             this.Controls.Add(this.menuStrip1);
             this.Controls.Add(this.pictureBox2);
             this.Name = "Lista_de_Produtos";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Lista_de_Produtos";
             this.Load += new System.EventHandler(this.Lista_de_Produtos_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();

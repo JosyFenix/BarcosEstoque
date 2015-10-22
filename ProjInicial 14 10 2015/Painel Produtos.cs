@@ -39,16 +39,19 @@ namespace ProjInicial
 
         private void button2_Click(object sender, EventArgs e)
         {
-            bool preenchido = false;
+           bool preenchido = false;
+            bool resposta;
             //String nomeProduto = "";
             int quant = -999999;
             String textoAux = textBox1.Text;
-            if(textoAux != "") 
+            if (textoAux != "")
                 quant = Int32.Parse(textoAux);
             String nomeProduto = "";
             nomeProduto = textBox2.Text;
             Item it = new Item();
             it.connectionItem();
+            resposta = it.buscaItem(nomeProduto);
+            
             if ((quant == -999999) || (nomeProduto == ""))
             {
                 MessageBox.Show("Complete Todos os Campos! ", "Importante", MessageBoxButtons.OK,
@@ -63,17 +66,32 @@ namespace ProjInicial
             if ((nomeProduto != null) && (quant != -999999))
                 if ((nomeProduto != "") && (quant != -999999) && (preenchido))
                 {
-                    it.cadastraItem(quant, nomeProduto);
-                    MessageBox.Show("Produto Cadastrada com Sucesso!", "Cadastrada", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    if (resposta == false)
+                    {
+                        if (quant >=0){
+                            it.cadastraItem(quant, nomeProduto);
+                            MessageBox.Show("Produto Cadastrado com Sucesso!", "Cadastrado", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        }
+                        else
+                        {
+                            MessageBox.Show("A Quantidade Não Pode Ser Negativa!!", "Cadastro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
+                        
+                    }
+                    else
+                    {
+                        MessageBox.Show("Produto Já Cadastrado!", "Cadastrado", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
                 }
             textBox1.Text = "";
             textBox2.Text = "";
            
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void button1_Click(object sender, EventArgs e) // BOTAO EXCLUIR 
         {
             bool preenchido = false;
+            bool resposta;
             //String nomeProduto = "";
             int quant = -999999;
             String textoAux = textBox1.Text;
@@ -83,6 +101,7 @@ namespace ProjInicial
             nomeProduto = textBox2.Text;
             Item it = new Item();
             it.connectionItem();
+            resposta = it.buscaItem(nomeProduto);
             if ((quant == -999999) || (nomeProduto == ""))
             {
                 MessageBox.Show("Complete Todos os Campos! ", "Importante", MessageBoxButtons.OK,
@@ -94,14 +113,30 @@ namespace ProjInicial
                 preenchido = true;
             }
 
-            if ((nomeProduto != null) && (quant != -999999))
+            if ((nomeProduto != null) && (quant != -999999)){
                 if ((nomeProduto != "") && (quant != -999999) && (preenchido))
                 {
-                    if (MessageBox.Show("Tem Certeza que Deseja Excluir o Produto?", "Aviso", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                    if (resposta == true)
                     {
-                        it.excluiItem(quant,nomeProduto);
-                        MessageBox.Show("Produto Excluído com Sucesso!", "Excluído", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        if (it.validaExclusao(nomeProduto) == true)
+                        {
+                            if (MessageBox.Show("Tem Certeza que Deseja Excluir o Produto?", "Aviso", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                            {
+                                it.excluiItem(quant, nomeProduto);
+                                MessageBox.Show("Produto Excluído com Sucesso!", "Excluído", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            }
+                        }
+                        else
+                        {
+                            MessageBox.Show ("O Produto Possui Quantidade Em Estoque - Não Pode Ser Excluído!!", "Exclusão", MessageBoxButtons.OK,MessageBoxIcon.Error);
+                        }
                     }
+                        else
+                        {
+                            MessageBox.Show("O Produto Inserido Não Existe!", "Exclusão", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
+                    }
+                        
                 }
 
 
@@ -123,5 +158,56 @@ namespace ProjInicial
             this.Hide();
 
         }
+
+        private void button5_Click(object sender, EventArgs e){
+        bool preenchido = false;
+            bool resposta;
+            //String nomeProduto = "";
+            int quant = -999999;
+            String textoAux = textBox1.Text;
+            if (textoAux != "")
+                quant = Int32.Parse(textoAux);
+            String nomeProduto = "";
+            nomeProduto = textBox2.Text;
+            Item it = new Item();
+            it.connectionItem();
+            resposta = it.buscaItem(nomeProduto);
+            
+            if ((quant == -999999) || (nomeProduto == ""))
+            {
+                MessageBox.Show("Complete Todos os Campos! ", "Importante", MessageBoxButtons.OK,
+                    MessageBoxIcon.Exclamation,
+                    MessageBoxDefaultButton.Button1);
+            }
+            else //se entrar aki é pq os dois campos estao preenchidos!!!!
+            {
+                preenchido = true;
+            }
+
+            if ((nomeProduto != null) && (quant != -999999))
+                if ((nomeProduto != "") && (quant != -999999) && (preenchido))
+                {
+                    if (resposta == false)
+                    {
+                        if (quant >=0){
+                            it.cadastraItem(quant, nomeProduto);
+                            MessageBox.Show("Produto Cadastrado com Sucesso!", "Cadastrado", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        }
+                        else
+                        {
+                            MessageBox.Show("A Quantidade Não Pode Ser Negativa!!", "Cadastro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
+                        
+                    }
+                    else
+                    {
+                        MessageBox.Show("Produto Já Cadastrado!", "Cadastrado", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                }
+            textBox1.Text = "";
+            textBox2.Text = "";
+           
+        }
+
     }
 }

@@ -19,6 +19,7 @@ namespace ProjInicial
 
         private void button5_Click(object sender, EventArgs e)
         {
+            bool resposta;
             bool preenchido = false;
             String nomeProduto = "";
             nomeProduto = textBox1.Text;
@@ -26,6 +27,7 @@ namespace ProjInicial
             localizaProduto = textBox2.Text;
             Barco b1 = new Barco();
             b1.connectionBarcos();
+            resposta = b1.buscaItem(nomeProduto);
             if ((localizaProduto == "") || (nomeProduto == ""))
             {
                 MessageBox.Show("Complete Todos os Campos! ", "Importante", MessageBoxButtons.OK,
@@ -40,28 +42,28 @@ namespace ProjInicial
             if ((nomeProduto != null) && (localizaProduto != null))
                 if ((nomeProduto != "") && (localizaProduto != "") && (preenchido))
                 {
-                    b1.cadastraBarco(localizaProduto, nomeProduto);
-                    MessageBox.Show("Embarcação Cadastrada com Sucesso!", "Cadastrada", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    if (resposta == false)///AKIIIIIIIIIIIII    
+                    {
+                        b1.cadastraBarco(localizaProduto, nomeProduto);
+                        MessageBox.Show("Embarcação Cadastrada com Sucesso!", "Cadastrada", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    else///AKIIIIIIIIIIIII    
+                    {
+                        MessageBox.Show("Embarcação Já Cadastrada!", "Cadastrado", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
                 }
 
 
             textBox1.Text = "";
             textBox2.Text = "";
+
+
         }
+
 
         private void button2_Click(object sender, EventArgs e)
         {
-            /*String nomeProduto = textBox1.Text;
-            String localizaProduto = textBox2.Text;
-            Barco b1 = new Barco();
-            //b1.connectionBarcos();
-            if ((nomeProduto != null) && (localizaProduto != null))
-                b1.cadastraBarco(localizaProduto, nomeProduto);
-            textBox1.Text = "";
-            textBox2.Text = "";
-            Nova_Embarcação_Cadastrada embarca1 = new Nova_Embarcação_Cadastrada();
-            embarca1.Show();
-             */
+            bool resposta;
             bool preenchido = false;
             String nomeProduto ="";
             nomeProduto = textBox1.Text;
@@ -69,6 +71,7 @@ namespace ProjInicial
             localizaProduto = textBox2.Text;
             Barco b1 = new Barco();
             b1.connectionBarcos();
+            resposta = b1.buscaItem(nomeProduto);
             if ((localizaProduto == "") || (nomeProduto == ""))
             {
                 MessageBox.Show("Complete Todos os Campos! ", "Importante", MessageBoxButtons.OK,
@@ -82,9 +85,15 @@ namespace ProjInicial
 
            if ((nomeProduto != null) && (localizaProduto != null))
                if ((nomeProduto != "") && (localizaProduto != "") && (preenchido))
-               {
+               { if (resposta == false)///AKIIIIIIIIIIIII    
+                    {
                    b1.cadastraBarco(localizaProduto, nomeProduto);
                    MessageBox.Show("Embarcação Cadastrada com Sucesso!","Cadastrada",MessageBoxButtons.OK ,MessageBoxIcon.Information);
+                    }
+               else///AKIIIIIIIIIIIII    
+               {
+                   MessageBox.Show("Embarcação Já Cadastrada!", "Cadastrado", MessageBoxButtons.OK, MessageBoxIcon.Information);
+               }
                }
             
             
@@ -121,12 +130,15 @@ namespace ProjInicial
         private void button1_Click(object sender, EventArgs e) //Botao Excluir
         {
             bool preenchido = false;
+            bool resposta;
             String nomeProduto = "";
             nomeProduto = textBox1.Text;
             String localizaProduto = "";
             localizaProduto = textBox2.Text;
             Barco b1 = new Barco();
             b1.connectionBarcos();
+            resposta = b1.buscaItem(nomeProduto); // Só pode excluir o que houver lá
+
             if ((localizaProduto == "") || (nomeProduto == ""))
             {
                 MessageBox.Show("Complete Todos os Campos! ", "Importante", MessageBoxButtons.OK,
@@ -141,11 +153,18 @@ namespace ProjInicial
             if ((nomeProduto != null) && (localizaProduto != null))
                 if ((nomeProduto != "") && (localizaProduto != "") && (preenchido))
                 {
-                    if (MessageBox.Show("Tem Certeza que Deseja Excluir a Embarcação?", "Aviso", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                    if (resposta == true)
                     {
-                        b1.excluiBarco(nomeProduto, localizaProduto);
+                        if (MessageBox.Show("Tem Certeza que Deseja Excluir a Embarcação?", "Aviso", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                        {
+                            b1.excluiBarco(nomeProduto, localizaProduto);
                             MessageBox.Show("Embarcação Excluída com Sucesso!", "Excluída", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    }   
+                        }
+                    }
+                    else{
+                        MessageBox.Show("A Embarcação Inserida Não Existe!", "Exclusão", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                      
                 }
 
 

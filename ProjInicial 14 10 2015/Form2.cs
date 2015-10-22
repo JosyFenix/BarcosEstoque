@@ -126,5 +126,12 @@ namespace ProjInicial
         {
 
         }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            Painel_Estoque painEstoque = new Painel_Estoque();
+            painEstoque.Show();
+            this.Hide();
+        }
     }
 }

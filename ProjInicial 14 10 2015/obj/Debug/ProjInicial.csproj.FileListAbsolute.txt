@@ -75,3 +75,4 @@ C:\Users\Josy\Documents\Visual Studio 2013\Projects\ProjInicial\github1\ProjInic
 C:\Users\Josy\Documents\Visual Studio 2013\Projects\ProjInicial\github1\ProjInicial 14 10 2015\obj\Debug\ProjInicial.Properties.Resources.resources
 C:\Users\Josy\Documents\Visual Studio 2013\Projects\ProjInicial\github1\ProjInicial 14 10 2015\obj\Debug\ProjInicial.Resources.resources
 C:\Users\Josy\Documents\Visual Studio 2013\Projects\ProjInicial\github1\ProjInicial 14 10 2015\obj\Debug\ProjInicial.csproj.GenerateResource.Cache
+C:\Users\Josy\Documents\Visual Studio 2013\Projects\ProjInicial\github1\ProjInicial 14 10 2015\obj\Debug\ProjInicial.Painel_Estoque.resources

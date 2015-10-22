@@ -77,14 +77,16 @@ namespace ProjInicial
             try
             {
                 int quantCompare = 0;
-                String query = "Select quantidade from produtos where produtosDescr LIKE produtosDescr;";
+                String query = "Select quantidade from produtos where produtosDescr ='" + produtosDescr + "';";
                 MySqlCommand comando = new MySqlCommand(query, mConnB);
                 mConnB.Open();
                 MySqlDataReader leitor = comando.ExecuteReader();
+                leitor.Read();
                 if(leitor.HasRows){
-                    String ux = leitor.GetString(0);
-                  //  String aux = (leitor["quantidade"].ToString());
-                    quantCompare = Int32.Parse(ux);
+                   String aux = leitor.GetString(0);
+                   //String aux = (leitor["quantidade"].ToString());
+
+                    quantCompare = int.Parse(aux);
                 }
 
                 mConnB.Close();
